@@ -59,10 +59,6 @@ $ python app.py
 
 This web application has the basic configuration for deployment with Gunicorn. Makes it easy for the application to be deployed on Heroku.
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Support
 
 For support or pull requests and github issues you can reach me via email [bukunmiadewale3@gmail.com](mailto:bukunmiadewale3@gmail.com) or [me@bukunmiweb.site](mailto:me@bukunmiweb.site)
@@ -78,15 +74,8 @@ This project is licensed under the MIT License
 
 ## Donation
 
-```html
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="TELRSZ8TJY5XE" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_NG/i/scr/pixel.gif" width="1" height="1" />
-</form>
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TELRSZ8TJY5XE)
 
-```
 
 ## Acknowledgement
 
