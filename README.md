@@ -65,7 +65,7 @@ For support or pull requests and github issues you can reach me via email [bukun
 
 ## Developer
 
-* ** Oyelekan Bukunmi**  Find out more about me [here](https://www.bukunmiweb.site)
+**Oyelekan Bukunmi**  Find out more about me [here](https://www.bukunmiweb.site)
 
 
 ## License
