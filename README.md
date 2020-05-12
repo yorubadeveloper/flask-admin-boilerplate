@@ -46,7 +46,7 @@ $ pip install -r requirements.txt
 ### Make sure you configure the SMTP and Mongodb Database before running the application
 Navigate to __init__.py under the configurations folder to configure your database and SMTP
 
-## Running the application
+### Running the application
 
 After installing all the requirements and ensuring that the configurations are done correctly, run the app.
 
