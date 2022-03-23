@@ -1,6 +1,12 @@
+import os
+
+import pandas as pd
 from flask import render_template, request, redirect, url_for, session
+
+import methods
 from app import app
 from model import *
+
 
 @app.route('/', methods=["GET"])
 def home():
@@ -101,3 +107,19 @@ def utilitiescolor():
 @app.route('/utilities-other', methods=["GET"])
 def utilitiesother():
     return render_template("utilities-other.html")
+
+@app.route('/collection_data', methods = ["GET"])
+def update_and_load_data():
+    data = load_data_to_db("Service Incident Tracker", "MASTER", "Service Incident Tracker", "uuid", )
+    data['timeStamp'] = pd.to_datetime(data["timeStamp"])
+    data.sort_values(by=["timeStamp"], inplace=True)
+    data = data.to_dict("records")
+    return render_template("table.html", data=data, table="Service Incident Tracker")
+
+@app.route('/collection_data', methods = ["GET"])
+def update_and_load_data():
+    data = methods.getNsgList(username='csproot', password='csproot', api_url='https://172.21.205.46:8443', enterprise='csp')
+    data = data.to_dict("records")
+    load_data_from_dataframe_to_db(data, "CDCDNsgList", ['Enterprise', 'NSG Name'])
+    load_data_from_dataframe_to_db
+    return render_template("table.html", data=data, table="Service Incident Tracker")

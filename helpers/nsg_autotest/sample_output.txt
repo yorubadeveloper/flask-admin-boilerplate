@@ -1,0 +1,39 @@
+Results of sli_nsgp8_home( 209.29.178.54 ) 
+
+nuage-bgp-show summary-all
+
+###### Start of nuage-bgp-show summary-all ######
+===============================================================================
+BGP Summary
+===============================================================================
+Neighbor
+ServiceId          AS PktRcvd InQ  Up/Down   State|Rcv/Act/Sent (Addr Family)
+                      PktSent OutQ
+-------------------------------------------------------------------------------
+
+No Matching Entries Found
+-------------------------------------------------------------------------------
+value = 0 = 0x0nuage-bgp-show summary-all
+
+###### End of nuage-bgp-show summary-all ######
+ovs-appctl vrf/list alubr0
+
+###### Start of ovs-appctl vrf/list alubr0 ######
+vrfs: 711205305 504813511 19999ovs-appctl vrf/list alubr0
+
+###### End of ovs-appctl vrf/list alubr0 ######
+ping google.com -c 5
+
+###### Start of ping google.com -c 5 ######
+PING google.com (172.217.164.206) 56(84) bytes of data.
+64 bytes from yyz12s04-in-f14.1e100.net (172.217.164.206): icmp_seq=1 ttl=115 time=18.7 ms
+64 bytes from yyz12s04-in-f14.1e100.net (172.217.164.206): icmp_seq=2 ttl=115 time=18.0 ms
+64 bytes from yyz12s04-in-f14.1e100.net (172.217.164.206): icmp_seq=3 ttl=115 time=18.8 ms
+64 bytes from yyz12s04-in-f14.1e100.net (172.217.164.206): icmp_seq=4 ttl=115 time=18.6 ms
+64 bytes from yyz12s04-in-f14.1e100.net (172.217.164.206): icmp_seq=5 ttl=115 time=19.8 ms
+
+--- google.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 18.087/18.848/19.892/0.603 msping google.com -c 5
+
+###### End of ping google.com -c 5 ######

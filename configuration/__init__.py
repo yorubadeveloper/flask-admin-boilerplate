@@ -21,3 +21,9 @@ connection_params = {
     'port': '27017',
     'namespace': '',
 }
+
+bucket_name = "dashboard_in"
+gsheet_name = "Service Incident Tracker"
+tab_name = "MASTER"
+GOOGLE_APPLICATION_CREDENTIALS = "gcp_account_json_key.json"
+#
