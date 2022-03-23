@@ -116,7 +116,7 @@ def update_and_load_data():
     data = data.to_dict("records")
     return render_template("table.html", data=data, table="Service Incident Tracker")
 
-@app.route('/collection_data', methods = ["GET"])
+@app.route('/getNsgList', methods = ["GET"])
 def update_and_load_data():
     data = methods.getNsgList(username='csproot', password='csproot', api_url='https://172.21.205.46:8443', enterprise='csp')
     data = data.to_dict("records")

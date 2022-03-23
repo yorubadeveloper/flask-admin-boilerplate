@@ -63,7 +63,8 @@ def load_data_to_db(sheet_name, tab_name, collection_name, key):
             except Exception as e:
                 print(e)
                 pass
-        return pd.DataFrame(db[collection_name].find({}))
+    return pd.DataFrame(db[collection_name].find({}))
+
 
 def load_data_from_dataframe_to_db(datarecords, collection_name, key=[]):
     query = {}
