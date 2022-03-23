@@ -120,6 +120,5 @@ def update_and_load_data():
 def update_and_load_data():
     data = methods.getNsgList(username='csproot', password='csproot', api_url='https://172.21.205.46:8443', enterprise='csp')
     data = data.to_dict("records")
-    load_data_from_dataframe_to_db(data, "CDCDNsgList", ['Enterprise', 'NSG Name'])
-    load_data_from_dataframe_to_db
+    data = load_data_from_dataframe_to_db(data, "CDCDNsgList", ['Enterprise', 'NSG Name'])
     return render_template("table.html", data=data, table="Service Incident Tracker")
