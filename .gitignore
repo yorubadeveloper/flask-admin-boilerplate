@@ -3,3 +3,5 @@ __pycache__/
 *$py.class
 venv/
 env
+gcp_account_json_key.json
+helpers/gcloud/service_incidents/gcp_account_json_key.json
