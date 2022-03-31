@@ -2,6 +2,7 @@
 # Email: linda.tian@telus.com
 # Python 3 environment to access production VSD
 # Adding : port role and mode,  timezone, nat-t
+# Updated with import vspk v6
 # Modified in Aug 2021
 
 # MOdified by :  Abisola Akinrinade  2022
@@ -11,27 +12,21 @@
 # Modified in March 2022
 
 
-from vspk import v5_0 as vspk
+from vspk import v6 as vspk
 import time
 import math
-import pandas as pd
 
+import pandas as pd
+import csv
 
 def getNsgList(username='', password='', api_url='', enterprise='', certificate=None):
-    # session = vspk.NUVSDSession(
-    #     username="x212879",
-    #     enterprise="csp",
-    #     # api_url="https://127.0.0.1:8443",
-    #     api_url="https://100.70.54.212:8443",
-    #     password="Telus1234",
-    #     certificate=None
-    # )
+
     if not username:
         username = 'csproot'
     if not password:
         password = 'csproot'
     if not api_url:
-        api_url = 'https://172.21.205.46:8443'
+        api_url = 'https://172.16.68.134:8443'
     if not enterprise:
         enterprise = 'csp'
     try:
@@ -90,6 +85,22 @@ def getNsgList(username='', password='', api_url='', enterprise='', certificate=
                     else:
                         Upgrade_Profile_Name = None
                     print(enterprise.name, nsg.system_id, nsg.name, nsg.bootstrap_status)
+                    #########  Adding extra info of nsg link START ###########
+                    port_mode = ''
+                    port_role = ''
+                    WAN1_NAT = ''
+                    for uplink in nsg.uplink_connections.get():
+                        if uplink.port_name == 'port1' or uplink.port_name == 'port3':
+                            port_mode = uplink.mode
+                            port_role = uplink.role
+                    for port in nsg.ns_ports.get():
+                        if "LAN" not in port.name:
+                            if port.physical_name == 'port1' or port.physical_name == 'port3':
+                                WAN1_NAT = port.enable_nat_probes
+
+                    for location in nsg.locations.get():
+                        timezone = location.time_zone_id
+                    #########  Adding extra info of nsg link END ###########
 
                     nsg_list.append(
                         [nsg.name, nsg.system_id, enterprise.name, nsg.bootstrap_status, nsg.operation_status,
@@ -104,6 +115,7 @@ def getNsgList(username='', password='', api_url='', enterprise='', certificate=
                          infrastructure_profile[nsg_template[nsg.template_id][1]][1],
                          nsg.configuration_reload_state, nsg.configuration_status,
                          nsg.associated_nsg_upgrade_profile_id, Upgrade_Profile_Name,
+                         port_mode, port_role, WAN1_NAT,
                          time.strftime("%Y-%m-%d", ts)])
 
                 page_num += 1
@@ -141,14 +153,27 @@ def getNsgList(username='', password='', api_url='', enterprise='', certificate=
                   'Sync Status',
                   'Upgrade Profile ID',
                   'Upgrade Profile Name',
+                  'WAN1_mode',
+                  'WAN1_port',
+                  'WAN1_NAT',
                   'Timestamp']
 
         nsgdf = pd.DataFrame(nsg_list, columns=header)
+        print (nsgdf)
+
+        ######  Commented for test only START ######
+        filename = 'nsglist.csv'
+        with open(filename, 'w', newline='') as csvfile:
+            spamwriter = csv.writer(csvfile, delimiter=',',
+                                    quotechar=',', quoting=csv.QUOTE_MINIMAL)
+            spamwriter.writerow(header)
+            for i in nsg_list:
+                spamwriter.writerow(i)
+        ######  Commented for test only END ######
 
         return nsgdf
     except Exception as e:
         print(e)
         return pd.DataFrame()
 
-if __name__=='__main__':
-    getNsgList(username='', password='', api_url='', enterprise='', certificate=None)
+getNsgList()
