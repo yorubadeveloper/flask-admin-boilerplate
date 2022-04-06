@@ -241,7 +241,7 @@ def getNsgList(username='', password='', api_url='', enterprise='', certificate=
                                                          network_dict[subnet.id][8],
                                                          vport.name, vport.id, vport.associated_gateway_id, vport.vlan,
                                                          vport.vlanid,
-                                                         '', '', '', '', '', '', '', ''])
+                                                         '', '', '', '', '', '', ''])
 
                             page_num_1 += 1
 

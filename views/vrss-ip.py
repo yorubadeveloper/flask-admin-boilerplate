@@ -96,18 +96,18 @@ def getVrssIP(username='', password='', api_url='', enterprise='', certificate=N
                                     vrs_managementIP = vrs.management_ip
 
                         vsc_vrss_list.append(
-                            [vsc.name, datapathUplinkId, publicIP, nsg_name, privateIP, jsonState, openflowState,
+                            [vsc.name, datapathUplinkId,vrs_dpid, publicIP, nsg_name, privateIP, jsonState, openflowState,
                              dtlsState, ipsecDtlsState, uplinkConnection,
                              vrs_status, vrs_uptime, vrs_uptimestamp,
-                             vrs_role, vrs_status, vrs_hypervisorConnectionState, vrs_managementIP])
+                             vrs_role, vrs_status, vrs_hypervisorConnectionState, vrs_managementIP,])
 
                     page_num += 1
 
         for i in vsc_vrss_list:
             print (i)
 
-        header = ['VSC', 'DPID', 'NSG_IP', 'NSG_NAME', 'PrivateIP', 'jsonState', 'openflowState', 'dtlsStat','ipsecDtlsState', 'uplinkConnection',
-                  'VRS_STATUS', 'NSG_UPTIME', 'UP_TIMESTAMP', 'ROLE', 'status', 'hypervisorConnectionState', 'vrs_managementIP']
+        header = ['VSC', 'DPID', 'VRS_DPID', 'NSG_IP', 'NSG_NAME', 'PrivateIP', 'jsonState', 'openflowState', 'dtlsStat','ipsecDtlsState', 'uplinkConnection',
+                 'VRS_STATUS', 'NSG_UPTIME', 'UP_TIMESTAMP', 'ROLE', 'status', 'hypervisorConnectionState', 'vrs_managementIP']
         ipdf = pd.DataFrame(vsc_vrss_list, columns=header)
         print (ipdf)
 
