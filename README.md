@@ -61,11 +61,11 @@ This web application has the basic configuration for deployment with Gunicorn. M
 
 ## Support
 
-For support or pull requests and github issues you can reach me via email [bukunmiadewale3@gmail.com](mailto:bukunmiadewale3@gmail.com) or [me@bukunmiweb.site](mailto:me@bukunmiweb.site)
+For support or pull requests and github issues you can reach me via email [bukunmiadewale3@gmail.com](mailto:bukunmiadewale3@gmail.com) or [me@bukunmiweb.site](mailto:me@oluwabukunmi.com)
 
 ## Developer
 
-**Oyelekan Bukunmi**  Find out more about me [here](https://www.bukunmiweb.site)
+**Oyelekan Bukunmi**  Find out more about me [here](https://www.oluwabukunmi.com)
 
 
 ## License
