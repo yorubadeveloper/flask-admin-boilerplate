@@ -2,7 +2,7 @@ gunicorn==19.9.0
 blinker==1.4
 click==7.1.2
 dnspython==1.16.0
-Flask==1.1.2
+Flask==2.3.2
 Flask-Mail==0.9.1
 itsdangerous==1.1.0
 Jinja2==2.11.2
