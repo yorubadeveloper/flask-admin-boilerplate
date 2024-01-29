@@ -5,7 +5,7 @@ dnspython==1.16.0
 Flask==1.1.2
 Flask-Mail==0.9.1
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 pymongo==3.10.1
 python-http-client==3.2.7
