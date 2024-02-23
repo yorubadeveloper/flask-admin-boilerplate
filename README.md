@@ -61,21 +61,16 @@ This web application has the basic configuration for deployment with Gunicorn. M
 
 ## Support
 
-For support or pull requests and github issues you can reach me via email [bukunmiadewale3@gmail.com](mailto:bukunmiadewale3@gmail.com) or [me@oluwabukunmi.com](mailto:me@oluwabukunmi.com)
+For support or pull requests and github issues you can reach me via email [bukunmiadewale3@gmail.com](mailto:bukunmiadewale3@gmail.com)
 
 ## Developer
 
-**Oyelekan Bukunmi**  Find out more about me [here](https://www.oluwabukunmi.com)
+**Oyelekan Bukunmi**  Find out more about me [here](https://www.bukunmi-dev.com/)
 
 
 ## License
 
 This project is licensed under the MIT License
-
-## Donation
-
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TELRSZ8TJY5XE)
-
 
 ## Acknowledgement
 
